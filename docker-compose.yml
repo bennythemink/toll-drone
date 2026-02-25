@@ -1,16 +1,16 @@
 services:
-  snapshot_toll-drone:
+  toll-uncrewed-systems:
     build: .
-    container_name: snapshot_toll-drone
+    container_name: toll-uncrewed-systems
     restart: unless-stopped
     expose:
-      - "80"
+      - '80'
     # Uncomment the next two lines to also publish to the host for local testing:
     # ports:
     #   - "8090:80"
     networks:
-      - caddy_net
+      - caddy-net
 
 networks:
-  caddy_net:
+  caddy-net:
     external: true
