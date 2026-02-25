@@ -1,0 +1,16 @@
+services:
+  snapshot_toll-drone:
+    build: .
+    container_name: snapshot_toll-drone
+    restart: unless-stopped
+    expose:
+      - "80"
+    # Uncomment the next two lines to also publish to the host for local testing:
+    # ports:
+    #   - "8090:80"
+    networks:
+      - caddy_net
+
+networks:
+  caddy_net:
+    external: true
